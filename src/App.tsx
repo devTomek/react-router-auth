@@ -1,6 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 
-const App: React.FC = () => {
+interface Props {}
+
+const App: FC<Props> = () => {
 	return <div>Hello World</div>;
 };
 
