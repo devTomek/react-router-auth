@@ -1,20 +1,29 @@
-import React, { FC } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from "react";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect
+} from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import LoginPage from "./components/LoginPage/LoginPage";
+import { IProps } from "./types/app";
 
-interface IProps {}
+const App = (props: IProps) => {
+	const { user } = props;
 
-const App: FC<IProps> = (): JSX.Element => {
 	return (
 		<Router>
 			<Switch>
 				<Route path="/" exact component={Dashboard} />
-				{/* TODO: make ProtecedRoute HOC or withRouteProtection hook */}
 				<Route path="/login" component={LoginPage} />
 			</Switch>
+			{user && <Redirect to="/" />}
+			{!user && <Redirect to="/login" />}
 		</Router>
 	);
 };
 
 export default App;
+
+// TODO: tests

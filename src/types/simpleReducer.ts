@@ -1,6 +1,6 @@
-export interface Action {
+export interface IAction {
 	type: string;
 	payload?: any;
 }
 
-export interface InitialState {}
+export interface IInitialState {}

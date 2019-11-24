@@ -1,1 +1,1 @@
-export interface InitialState {}
+export interface IInitialState {}

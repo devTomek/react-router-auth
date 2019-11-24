@@ -1,8 +1,8 @@
-import { Action, InitialState } from "../types/simpleReducer";
+import { IAction, IInitialState } from "../types/simpleReducer";
 
-const initialState: InitialState = {};
+const initialState: IInitialState = {};
 
-export default (state: InitialState = initialState, action: Action) => {
+export default (state: IInitialState = initialState, action: IAction) => {
 	switch (action.type) {
 		case "SIMPLE_ACTION":
 			return {
