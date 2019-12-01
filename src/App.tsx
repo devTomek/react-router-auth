@@ -15,8 +15,8 @@ const App = (props: IProps) => {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/" exact component={Dashboard} />
-				<Route path="/login" component={LoginPage} />
+				<Route id="dashboard" path="/" exact component={Dashboard} />
+				<Route id="login" path="/login" component={LoginPage} />
 			</Switch>
 			{user && <Redirect to="/" />}
 			{!user && <Redirect to="/login" />}
@@ -25,5 +25,3 @@ const App = (props: IProps) => {
 };
 
 export default App;
-
-// TODO: tests
