@@ -2,12 +2,7 @@ import React from "react";
 import App from "./App";
 import { shallow, ShallowWrapper } from "enzyme";
 
-interface IProps {
-	user?: {
-		id: string;
-		email: string;
-	};
-}
+interface IProps {}
 
 describe("App", () => {
 	let wrapper: ShallowWrapper, props: IProps;

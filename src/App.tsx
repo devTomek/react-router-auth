@@ -7,10 +7,9 @@ import {
 } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import LoginPage from "./components/LoginPage/LoginPage";
-import { IProps } from "./types/app";
 
-const App = (props: IProps) => {
-	const { user } = props;
+const App = () => {
+	const user = localStorage.getItem("x-auth");
 
 	return (
 		<Router>
