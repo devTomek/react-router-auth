@@ -6,15 +6,13 @@ import * as serviceWorker from "./serviceWorker";
 import configureStore from "./store";
 import { Provider } from "react-redux";
 import { Store } from "redux";
-import { IUser } from "./types/index";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const store: Store = configureStore({});
 
-const user: IUser = store.getState().user;
-
 ReactDOM.render(
 	<Provider store={store}>
-		<App user={user} />
+		<App />
 	</Provider>,
 	document.getElementById("root")
 );
