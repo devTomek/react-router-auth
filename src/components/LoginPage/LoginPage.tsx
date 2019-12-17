@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import styles from "./LoginPage.module.scss";
-import { loginAction } from "./actions";
+import { loginAction } from "./actions/actions";
 import { useDispatch } from "react-redux";
 
 const LoginPage = () => {

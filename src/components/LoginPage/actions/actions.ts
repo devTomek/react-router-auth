@@ -1,6 +1,10 @@
 import { Dispatch } from "redux";
-import { loadingStart, loadingStop, catchError } from "../../api/actions";
-import API from "../../api/API";
+import {
+	loadingStart,
+	loadingStop,
+	catchError
+} from "../../../api/actions/actions";
+import API from "../../../api/API";
 
 export const loginAction = (login: string, password: string) => (
 	dispatch: Dispatch

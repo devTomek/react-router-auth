@@ -1,4 +1,4 @@
-import { LOADING_START, LOADING_STOP, CATCH_ERROR } from "./actions";
+import { LOADING_START, LOADING_STOP, CATCH_ERROR } from "../actions/actions";
 
 interface IAction {
 	type: string;
