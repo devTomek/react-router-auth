@@ -2,7 +2,7 @@ import React from "react";
 
 interface IProps {}
 
-const Dashboard: React.FC<IProps> = (props: IProps): JSX.Element => {
+const Dashboard = (props: IProps) => {
 	return <div>Dashboard</div>;
 };
 

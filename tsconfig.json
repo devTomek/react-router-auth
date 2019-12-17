@@ -21,6 +21,7 @@
 	},
 	"include": [
 		"src",
-		"setupTests.ts"
+		"setupTests.ts",
+		"rootReducer.ts"
 	]
 }
