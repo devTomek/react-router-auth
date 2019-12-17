@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import LoginPage from "./components/LoginPage/LoginPage";
+import { Routes } from "./api/routes";
 
 const App = () => {
 	const user = localStorage.getItem("x-auth");
@@ -17,8 +18,8 @@ const App = () => {
 				<Route id="dashboard" path="/" exact component={Dashboard} />
 				<Route id="login" path="/login" component={LoginPage} />
 			</Switch>
-			{user && <Redirect to="/" />}
-			{!user && <Redirect to="/login" />}
+			{user && <Redirect to={Routes.DASHBOARD} />}
+			{!user && <Redirect to={Routes.LOGIN} />}
 		</Router>
 	);
 };

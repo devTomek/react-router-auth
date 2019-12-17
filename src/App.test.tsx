@@ -1,6 +1,7 @@
 import React from "react";
 import App from "./App";
 import { shallow, ShallowWrapper } from "enzyme";
+import { Routes } from "./api/routes";
 
 interface IProps {}
 
@@ -15,7 +16,7 @@ describe("App", () => {
 	it("should have dashboard path", () => {
 		const dashboard = wrapper.find("#dashboard");
 		const path = dashboard.props().path;
-		const dashboardPath = "/";
+		const dashboardPath = Routes.DASHBOARD;
 
 		expect(path).toEqual(dashboardPath);
 	});
@@ -23,15 +24,15 @@ describe("App", () => {
 	it("should have login path", () => {
 		const login = wrapper.find("#login");
 		const path = login.props().path;
-		const loginPath = "/login";
+		const loginPath = Routes.LOGIN;
 
 		expect(path).toEqual(loginPath);
 	});
 
-	it("should redirect to /login", () => {
+	it("should redirect to LoginPage", () => {
 		const redirect = wrapper.find("Redirect");
 		const path = redirect.props().to;
-		expect(path).toEqual("/login");
+		expect(path).toEqual(Routes.LOGIN);
 	});
 
 	describe("given user", () => {
@@ -43,10 +44,10 @@ describe("App", () => {
 			window.localStorage.removeItem("x-auth");
 		});
 
-		it("should redirect to /", () => {
+		it("should redirect to Dashboard", () => {
 			const redirect = wrapper.find("Redirect");
 			const path = redirect.props().to;
-			expect(path).toEqual("/");
+			expect(path).toEqual(Routes.DASHBOARD);
 		});
 	});
 });
