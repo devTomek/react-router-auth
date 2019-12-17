@@ -14,7 +14,7 @@ describe("App", () => {
 	});
 
 	it("should have dashboard path", () => {
-		const dashboard = wrapper.find("#dashboard");
+		const dashboard: ShallowWrapper<any> = wrapper.find("#dashboard");
 		const path = dashboard.props().path;
 		const dashboardPath = Routes.DASHBOARD;
 
@@ -22,7 +22,7 @@ describe("App", () => {
 	});
 
 	it("should have login path", () => {
-		const login = wrapper.find("#login");
+		const login: ShallowWrapper<any> = wrapper.find("#login");
 		const path = login.props().path;
 		const loginPath = Routes.LOGIN;
 
