@@ -8,7 +8,6 @@ export const loginAction = (login: string, password: string) => (
 	try {
 		dispatch(loadingStart());
 		API.login(login, password);
-		//todo why this isnt called?
 		dispatch(loadingStop());
 	} catch (e) {
 		dispatch(catchError(e));
