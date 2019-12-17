@@ -34,18 +34,19 @@ describe("App", () => {
 		expect(path).toEqual("/login");
 	});
 
-	it("should redirect to /", () => {
-		const user = {
-			id: "1",
-			email: "test@test"
-		};
-		props = {
-			...props,
-			user
-		};
-		wrapper.setProps(props);
-		const redirect = wrapper.find("Redirect");
-		const path = redirect.props().to;
-		expect(path).toEqual("/");
+	describe("given user", () => {
+		beforeAll(() => {
+			window.localStorage.setItem("x-auth", "user");
+		});
+
+		afterAll(() => {
+			window.localStorage.removeItem("x-auth");
+		});
+
+		it("should redirect to /", () => {
+			const redirect = wrapper.find("Redirect");
+			const path = redirect.props().to;
+			expect(path).toEqual("/");
+		});
 	});
 });
