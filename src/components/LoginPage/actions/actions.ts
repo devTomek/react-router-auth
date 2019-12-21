@@ -6,12 +6,15 @@ import {
 } from "../../../api/actions/actions";
 import API from "../../../api/API";
 
-export const loginAction = (login: string, password: string) => (
+export const LOGIN = "LOGIN";
+
+export const loginAction = (login: string, password: string): any => async (
 	dispatch: Dispatch
 ) => {
 	try {
 		dispatch(loadingStart());
-		API.login(login, password);
+		const res = await API.login(login, password);
+		dispatch({ type: LOGIN, res });
 		dispatch(loadingStop());
 	} catch (e) {
 		dispatch(catchError(e));
