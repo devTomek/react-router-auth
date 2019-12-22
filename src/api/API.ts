@@ -1,3 +1,4 @@
+//todo
 const login = async (login: string, password: string) => {
 	const user = Object.freeze({
 		login,
@@ -6,6 +7,8 @@ const login = async (login: string, password: string) => {
 	localStorage.setItem("x-auth", JSON.stringify(user));
 	return user;
 };
+
+export const getJWT = () => localStorage.getItem("x-auth");
 
 const API = {
 	login
