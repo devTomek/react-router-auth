@@ -10,7 +10,7 @@ describe("loginAction", () => {
 	it("should return expected actions", async () => {
 		const expectedActions = [
 			{ type: LOADING_START },
-			{ type: LOGIN, res: "login" },
+			{ type: LOGIN, res: { login: "login", password: "password" } },
 			{ type: LOADING_STOP }
 		];
 		const store = mockStore({ loading: true });

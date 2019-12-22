@@ -10,7 +10,10 @@ const LoginPage = () => {
 	const dispatch = useDispatch();
 
 	const onSubmit = (e: FormEvent) => {
-		e.preventDefault();
+		if (login === "" || password === "") {
+			e.preventDefault();
+			return;
+		}
 		dispatch(loginAction(login, password));
 	};
 
