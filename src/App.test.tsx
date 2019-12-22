@@ -34,20 +34,4 @@ describe("App", () => {
 		const path = redirect.props().to;
 		expect(path).toEqual(Routes.LOGIN);
 	});
-
-	describe("given user", () => {
-		beforeAll(() => {
-			window.localStorage.setItem("x-auth", "user");
-		});
-
-		afterAll(() => {
-			window.localStorage.removeItem("x-auth");
-		});
-
-		it("should redirect to Dashboard", () => {
-			const redirect = wrapper.find("Redirect");
-			const path = redirect.props().to;
-			expect(path).toEqual(Routes.DASHBOARD);
-		});
-	});
 });

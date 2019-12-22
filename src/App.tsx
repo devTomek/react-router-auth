@@ -18,7 +18,6 @@ const App = () => {
 				<Route id="dashboard" path="/" exact component={Dashboard} />
 				<Route id="login" path="/login" component={LoginPage} />
 			</Switch>
-			{user && <Redirect to={Routes.DASHBOARD} />}
 			{!user && <Redirect to={Routes.LOGIN} />}
 		</Router>
 	);

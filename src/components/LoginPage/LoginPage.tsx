@@ -3,18 +3,32 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import styles from "./LoginPage.module.scss";
 import { loginAction } from "./actions/actions";
 import { useDispatch } from "react-redux";
+import { getJWT } from "../../api/API";
 
-const LoginPage = () => {
+interface IProps {
+	history: {
+		push: (url: string) => void;
+	};
+}
+
+const LoginPage = ({ history }: IProps) => {
 	const [login, setLogin] = useState("");
 	const [password, setPassword] = useState("");
 	const dispatch = useDispatch();
 
 	const onSubmit = (e: FormEvent) => {
+		e.preventDefault();
 		if (login === "" || password === "") {
-			e.preventDefault();
 			return;
 		}
+
+		const JWT = getJWT();
+		if (JWT === undefined) {
+			return;
+		}
+
 		dispatch(loginAction(login, password));
+		history.push("/");
 	};
 
 	return (
