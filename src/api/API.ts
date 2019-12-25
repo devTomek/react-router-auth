@@ -1,4 +1,3 @@
-//todo
 const login = async (login: string, password: string) => {
 	const user = Object.freeze({
 		login,

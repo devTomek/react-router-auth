@@ -4,6 +4,7 @@ import styles from "./LoginPage.module.scss";
 import { loginAction } from "./actions/actions";
 import { useDispatch } from "react-redux";
 import { getJWT } from "../../api/API";
+import { Routes } from "../../api/routes";
 
 interface IProps {
 	history: {
@@ -23,12 +24,12 @@ const LoginPage = ({ history }: IProps) => {
 		}
 
 		const JWT = getJWT();
-		if (JWT === undefined) {
+		if (JWT === null) {
 			return;
 		}
 
 		dispatch(loginAction(login, password));
-		history.push("/");
+		history.push(Routes.DASHBOARD);
 	};
 
 	return (
@@ -56,7 +57,7 @@ const LoginPage = ({ history }: IProps) => {
 						onChange={e => setPassword(e.target.value)}
 					/>
 				</FormGroup>
-				<Button>Login</Button>
+				<Button id="loginButton">Login</Button>
 			</Form>
 		</div>
 	);
