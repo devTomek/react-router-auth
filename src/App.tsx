@@ -8,9 +8,10 @@ import {
 import Dashboard from "./components/Dashboard/Dashboard";
 import LoginPage from "./components/LoginPage/LoginPage";
 import { Routes } from "./api/routes";
+import { getJWT } from "./api/API";
 
 const App = () => {
-	const user = localStorage.getItem("x-auth");
+	const jwt = getJWT();
 
 	return (
 		<Router>
@@ -18,7 +19,8 @@ const App = () => {
 				<Route id="dashboard" path="/" exact component={Dashboard} />
 				<Route id="login" path="/login" component={LoginPage} />
 			</Switch>
-			{!user && <Redirect to={Routes.LOGIN} />}
+			//todo: not working as expected
+			{!jwt && <Redirect to={Routes.LOGIN} />}
 		</Router>
 	);
 };
