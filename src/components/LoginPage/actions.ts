@@ -3,8 +3,8 @@ import {
 	loadingStart,
 	loadingStop,
 	catchError
-} from "../../../api/actions/actions";
-import API, { setJWT } from "../../../api/API";
+} from "../../api/actions/actions";
+import API, { setJWT } from "../../api/API";
 
 export const LOGIN = "LOGIN";
 
