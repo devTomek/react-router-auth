@@ -1,13 +1,18 @@
-const login = async (login: string, password: string) => {
-	const user = Object.freeze({
-		login,
-		password
+const login = async (email: string, password: string) => {
+	const res = await fetch("/api/login", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify({ email, password })
 	});
-	localStorage.setItem("x-auth", JSON.stringify(user));
-	return user;
+	const jwt = await res.json();
+
+	return jwt;
 };
 
 export const getJWT = () => localStorage.getItem("x-auth");
+export const setJWT = (jwt: string) => localStorage.setItem("x-auth", jwt);
 
 const API = {
 	login

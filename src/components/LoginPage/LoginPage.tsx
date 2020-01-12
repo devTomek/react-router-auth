@@ -3,7 +3,6 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import styles from "./LoginPage.module.scss";
 import { loginAction } from "./actions/actions";
 import { useDispatch } from "react-redux";
-import { getJWT } from "../../api/API";
 import { Routes } from "../../api/routes";
 
 interface IProps {
@@ -19,12 +18,8 @@ const LoginPage = ({ history }: IProps) => {
 
 	const onSubmit = (e: FormEvent) => {
 		e.preventDefault();
-		if (login === "" || password === "") {
-			return;
-		}
 
-		const JWT = getJWT();
-		if (JWT === null) {
+		if (login === "" || password === "") {
 			return;
 		}
 
