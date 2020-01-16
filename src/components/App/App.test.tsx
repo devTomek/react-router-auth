@@ -1,7 +1,7 @@
 import React from "react";
 import App from "./App";
 import { shallow, ShallowWrapper } from "enzyme";
-import { Routes } from "./api/routes";
+import { Routes } from "../../api/routes";
 
 interface IProps {}
 

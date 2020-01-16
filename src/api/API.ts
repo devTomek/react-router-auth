@@ -11,7 +11,7 @@ const login = async (email: string, password: string) => {
 	return jwt;
 };
 
-export const getJWT = () => localStorage.getItem("x-auth");
+export const getJWT = (): any => localStorage.getItem("x-auth");
 export const setJWT = (jwt: string) => localStorage.setItem("x-auth", jwt);
 
 const API = {

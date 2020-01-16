@@ -4,6 +4,7 @@ import styles from "./LoginPage.module.scss";
 import { loginAction } from "./actions";
 import { useDispatch } from "react-redux";
 import { Routes } from "../../api/routes";
+import { getJWT } from "../../api/API";
 
 interface IProps {
 	history: {
@@ -24,7 +25,7 @@ const LoginPage = ({ history }: IProps) => {
 		}
 
 		dispatch(loginAction(login, password));
-		history.push(Routes.DASHBOARD);
+		getJWT() && history.push(Routes.DASHBOARD);
 	};
 
 	return (
